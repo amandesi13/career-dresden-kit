@@ -1,0 +1,13 @@
+config.local.json
+generated_applications/
+latest_job_matches.md
+open_jobs_shortlist_*.md
+github_project_roadmap.md
+application_packet/
+build/
+amandeep_resume_working_student.tex
+cover_letters/
+cover_letters/build/
+*.env
+__pycache__/
+.pytest_cache/

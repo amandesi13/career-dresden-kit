@@ -1,0 +1,134 @@
+{
+  "candidate": {
+    "name": "Amandeep Singh",
+    "minimum_score": 13,
+    "target_locations": ["Dresden", "Saxony", "Germany", "Remote Germany"],
+    "positive_keywords": [
+      "working student",
+      "werkstudent",
+      "intern",
+      "embedded",
+      "c++",
+      "c/c++",
+      "python",
+      "linux",
+      "firmware",
+      "software engineer",
+      "5g",
+      "ran",
+      "network",
+      "telecom",
+      "security",
+      "kubernetes",
+      "docker",
+      "ci/cd",
+      "semiconductor",
+      "validation",
+      "verification",
+      "backend",
+      "api",
+      "data engineering",
+      "qa",
+      "test automation"
+    ],
+    "required_any_keywords": [
+      "embedded",
+      "c++",
+      "c/c++",
+      "python",
+      "linux",
+      "firmware",
+      "software engineer",
+      "software developer",
+      "backend",
+      "api",
+      "data engineering",
+      "cloud",
+      "kubernetes",
+      "docker",
+      "ci/cd",
+      "qa",
+      "test automation",
+      "5g",
+      "ran",
+      "telecom",
+      "network",
+      "security",
+      "semiconductor",
+      "validation",
+      "verification"
+    ],
+    "negative_keywords": [
+      "senior",
+      "principal",
+      "manager",
+      "full-time",
+      "sales",
+      "human resources",
+      "marketing",
+      "customer care",
+      "customer support",
+      "controlling",
+      "freelance",
+      "founder"
+    ]
+  },
+  "application": {
+    "email": "amandeep.dev.eu@gmail.com",
+    "phone": "+49 174 3482786",
+    "github": "https://github.com/amandesi13",
+    "portfolio": "https://amandesi13.github.io/amandesi-portfolio/",
+    "linkedin": "https://www.linkedin.com/in/amandesi/",
+    "resume_pdf": "application_packet/Amandeep_Singh_CV.pdf"
+  },
+  "sources": {
+    "arbeitnow": true,
+    "workday": [
+      {
+        "company": "NXP",
+        "base_url": "https://nxp.wd3.myworkdayjobs.com",
+        "tenant": "nxp",
+        "site": "careers",
+        "query": "Dresden Working Student",
+        "fetch_details": true
+      }
+    ],
+    "rss": [],
+    "manual_search_links": [
+      {
+        "company": "SAP",
+        "url": "https://jobs.sap.com/go/SAP-Jobs-in-Dresden/882101/"
+      },
+      {
+        "company": "Nokia",
+        "url": "https://jobs.nokia.com/en/sites/CX_1/jobs?keyword=working%20student%20Dresden"
+      },
+      {
+        "company": "Vodafone Germany",
+        "url": "https://jobs.vodafone.de/"
+      },
+      {
+        "company": "Infineon",
+        "url": "https://jobs.infineon.com/careers"
+      },
+      {
+        "company": "LinkedIn",
+        "url": "https://www.linkedin.com/jobs/search/?keywords=working%20student%20embedded%20software&location=Dresden%2C%20Saxony%2C%20Germany"
+      },
+      {
+        "company": "Indeed",
+        "url": "https://de.indeed.com/jobs?q=working+student+embedded+software&l=Dresden"
+      }
+    ]
+  },
+  "email": {
+    "enabled": false,
+    "subject": "Morning Dresden tech job matches + application packets",
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "from": "your.email@gmail.com",
+    "to": "your.email@gmail.com",
+    "username": "your.email@gmail.com",
+    "password_env": "JOB_AGENT_SMTP_PASSWORD"
+  }
+}

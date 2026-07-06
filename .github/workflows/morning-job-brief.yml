@@ -1,0 +1,45 @@
+name: Morning Job Brief
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 06:30 UTC = 08:30 Berlin during summer time, 07:30 during winter time.
+    - cron: "30 6 * * 1-5"
+
+jobs:
+  send-brief:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build local config from secrets
+        run: |
+          cp config.example.json config.local.json
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path("config.local.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+          data["email"]["enabled"] = True
+          data["email"]["from"] = os.environ["JOB_AGENT_EMAIL_FROM"]
+          data["email"]["to"] = os.environ["JOB_AGENT_EMAIL_TO"]
+          data["email"]["username"] = os.environ["JOB_AGENT_EMAIL_USERNAME"]
+          path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+          PY
+        env:
+          JOB_AGENT_EMAIL_FROM: ${{ secrets.JOB_AGENT_EMAIL_FROM }}
+          JOB_AGENT_EMAIL_TO: ${{ secrets.JOB_AGENT_EMAIL_TO }}
+          JOB_AGENT_EMAIL_USERNAME: ${{ secrets.JOB_AGENT_EMAIL_USERNAME }}
+
+      - name: Send morning job brief
+        run: python job_agent.py --config config.local.json --limit 12 --docs-limit 5 --email
+        env:
+          JOB_AGENT_SMTP_PASSWORD: ${{ secrets.JOB_AGENT_SMTP_PASSWORD }}
